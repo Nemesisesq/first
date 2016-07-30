@@ -1,1 +1,1 @@
-web: qppswebcommand
+web: appswebcommand
