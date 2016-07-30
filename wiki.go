@@ -7,6 +7,7 @@ import (
     "net/http"
     "regexp"
     "errors"
+    "os"
 )
 
 type Page struct {
@@ -30,11 +31,15 @@ func loadpage(title string) (*Page, error) {
 }
 
 func main() {
+
+    var PORT = os.Getenv("PORT")
+    fmt.Println(PORT)
+    fmt.Println("hello world")
     http.HandleFunc("/", handler)
     http.HandleFunc("/view/", makeHandler(viewHandler))
     http.HandleFunc("/edit/", makeHandler(editHandler))
     http.HandleFunc("/save/", makeHandler(saveHandler))
-    http.ListenAndServe(":8080", nil)
+    http.ListenAndServe(":" + PORT, nil)
 
 }
 
