@@ -2,5 +2,8 @@
 	"ImportPath": "github.com/nemesisesq/first",
 	"GoVersion": "go1.6",
 	"GodepVersion": "v74",
+	"Packages": [
+		"./..."
+	],
 	"Deps": []
 }
